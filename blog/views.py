@@ -22,5 +22,15 @@ def category_list(request, category_id):
 def post_detail(request, post_id):
     # 文章详情页
     post = get_object_or_404(Post, id=post_id)
-    context = {'post': post}
+
+    # 用文章id来实现的上下篇
+    prev_post = Post.objects.filter(id__lt=post_id).last()  # 上一篇
+    next_post = Post.objects.filter(id__gt=post_id).first() # 下一篇
+    
+    # 用发布日期来实现上下篇
+    # date_prev_post = Post.objects.filter(add_date__lt=post.add_date).last()
+    # date_next_post = Post.objects.filter(add_date__gt=post.add_date).first()
+    
+
+    context = {'post': post, 'prev_post': prev_post, 'next_post': next_post}
     return render(request, 'blog/detail.html', context)

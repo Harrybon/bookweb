@@ -11,8 +11,8 @@
 </head>
 
 <body>
-	<div class="pt-6">
-		<nav class="navbar is-primary container" role="navigation" aria-label="main navigation">
+
+	<nav class="navbar is-primary container" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="https://bulma.io">
 					<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
@@ -69,9 +69,7 @@
 					{% endblock %}
 				</div>
 			</div>
-		</nav>
-	</div>
-
+	</nav>
 	<section class="section">
 		<div class=" container">
 			<div class="columns">
@@ -94,7 +92,16 @@
 				<div class="column is-4">
 
 					{% block right %}
-					右侧
+					{% get_sidebar_list as sidebar_list %}
+					
+					{% for sidebar in sidebar_list %}
+					<div class="box">
+						<h1 class=" is-size-5 title">{{ sidebar.title }}</h1>
+						<p>{{ sidebar.get_content|safe }}</p>
+					</div>
+						
+					{% endfor %}
+						
 					{% endblock %}
 
 				</div>
