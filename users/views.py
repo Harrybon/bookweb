@@ -146,7 +146,7 @@ def editor_users(request):
             user_profile_form = UserProfileForm(request.POST, request.FILES)  # 空表单，直接获取空表单的数据保存
             if form.is_valid() and user_profile_form.is_valid():
                 form.save()
-                # commit=False 先不保存，先把数据放在内存中，然后再重新给指定的字段赋值天剑进去，提交保存新的数据
+                # commit=False 先不保存，先把数据放在内存中，然后再重新给指定的字段赋值添加进去，提交保存新的数据
                 new_user_profile = user_profile_form.save(commit=False)
                 new_user_profile.owner = request.user
                 new_user_profile.save()

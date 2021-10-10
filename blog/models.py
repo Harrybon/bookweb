@@ -42,6 +42,9 @@ class Post(models.Model):
     content = models.TextField(verbose_name="文章详情")
     tags = models.ForeignKey(Tag, blank=True, null=True, on_delete=models.CASCADE, verbose_name="文章标签")
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="作者")
+    is_hot = models.BooleanField(default=False, verbose_name="是否热门")   # 手动热门推荐
+
+    pv = models.IntegerField(default=0,verbose_name="浏览量")  # 浏览量
     add_date = models.DateTimeField(auto_now_add=True, verbose_name="添加时间")
     pub_date = models.DateTimeField(auto_now=True, verbose_name="修改时间")
 
@@ -100,7 +103,7 @@ class Sidebar(models.Model):
             return render_to_string('blog/sidebar/search.html', context=context)
         elif self.display_type == 2:
             context = {
-
+                
             }
             return render_to_string('blog/sidebar/new_post.html', context=context)
         elif self.display_type == 3:
