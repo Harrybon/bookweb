@@ -65,5 +65,8 @@ def search(request):
 def archives(request, year, month):
     # 文章归档列表页
     post_list = Post.objects.filter(add_date__year=year, add_date__month=month)
-    context = {'post_list': post_list, 'year': year, 'month': month}
+    paginator = Paginator(post_list, 2)  # 第二个参数2代表每页显示几个
+    page_number = request.GET.get('page')   # http://assas.co/?page=1 (页码)
+    page_obj = paginator.get_page(page_number)
+    context = {'page_obj': page_obj, 'year': year, 'month': month}
     return render(request, 'blog/archives_list.html', context )
