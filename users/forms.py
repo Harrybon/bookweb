@@ -62,7 +62,7 @@ class ModifyPwdForm(forms.Form):
 
 class UserForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={
-        'class': 'input'
+        'class': 'input', 'disabled':'disabled'
     }))
 
     class Meta:

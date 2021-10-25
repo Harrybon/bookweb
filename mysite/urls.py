@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import include, path  # 这里引入include()方法
 from django.conf import settings
 from django.conf.urls.static import static
+from utils.upload import upload_file   # 富文本编辑器上传图片方法
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
+
+    path('uploads/', upload_file, name='uploads')   # 上传图片url
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # 配置静态文件url
 

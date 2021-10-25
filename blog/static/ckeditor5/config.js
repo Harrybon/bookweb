@@ -48,6 +48,10 @@ $(document).ready(function () {
                     'imageStyle:side'
                 ]
             },
+            // 上传图片url配置
+            ckfinder: {
+                uploadUrl: '/uploads/'
+            },
             table: {
                 contentToolbar: [
                     'tableColumn',
@@ -56,8 +60,6 @@ $(document).ready(function () {
                 ]
             },
             licenseKey: '',
-
-
 
         })
         .then(editor => {
