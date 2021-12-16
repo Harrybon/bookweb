@@ -129,7 +129,7 @@ STATICFILES_DIRS = [
     '/var/www/django-blog/static/',
 ]
 
-STATIC_ROOT = '/var/www/django-blog/static/'
+# STATIC_ROOT = '/var/www/django-blog/static/'
 
 
 # 配置用户上传文件
