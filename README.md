@@ -3,6 +3,10 @@
 #### 介绍
 django手把手从零开发个人博客配套源码，本教程由本人业余时间免费制作，视频录制上传在B站，旨在帮助初学者通过一个博客系统完全入门Django开发！
 
+#### 项目架构说明
+- [架构说明](https://gitee.com/qbiancheng/django-blog/blob/master/doc/%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.md)
+
+
 #### 相关文档
 
 1.  配套视频教程：https://www.bilibili.com/video/BV1iU4y1A7MH/
