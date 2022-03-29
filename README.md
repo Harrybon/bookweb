@@ -10,7 +10,7 @@ django手把手从零开发个人博客配套源码，本教程由本人业余�
 #### 相关文档
 
 1.  配套视频教程：https://www.bilibili.com/video/BV1iU4y1A7MH/
-2.  配套文档教程：http://www.lotdoc.cn/topics/3/
+2.  配套文档教程：http://www.lotdoc.cn/blog/topic/detail/1/
 3.  演示站：http://proae.cn/
 
 #### 相关项目推荐
